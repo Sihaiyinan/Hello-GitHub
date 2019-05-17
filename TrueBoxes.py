@@ -8,44 +8,46 @@ import xml.etree.cElementTree as ET
 def read_xml(xmlpath):
     tree = ET.parse(xmlpath)
     root = tree.getroot()
-    img_width = None
-    img_height = None
-    box_list = []
-    for child_item in root:
-        if child_item.tag == 'filename':
-            filename = child_item.text
+    # img_width = None
+    # img_height = None
+    # label = None
+    attributes = []
 
-    for child_root in root:
-        if child_root.tag == 'size':
-            for child_item in child_root:
-                if child_item.tag == 'width':
-                    img_width = int(child_item.text)
-                if child_item.tag == 'height':
-                    img_height = int(child_item.text)
+    filename = root.findall('filename')[0].text
+    attributes.append(filename)
 
-        if child_root.tag == 'object':
-            label = None
-            for child_item in child_root:
-                if child_item.tag == 'name':
-                    label = child_item.text
-                if child_item.tag == 'bndbox':
-                    tmp_box = []
-                    for node in child_item:
-                        tmp_box.append(int(node.text))
-                    assert label is not None, 'label is none, error'
-                    tmp_box.append(label)
-                    box_list.append(tmp_box)
+    size = root.findall('size')[0]
+    img_width = size.findall('width')[0].text
+    attributes.append(img_width)
+    img_height = size.findall('height')[0].text
+    attributes.append(img_height)
 
 
-    return [filename, img_height, img_width, box_list]
+    for object in root.findall('object'):
+        box_list = []
+        label = object.find('name').text
+        box_list.append(label)
+        bndbox = object.find('bndbox')
+        for bnd in bndbox:
+            box_list.append(bnd.text)
+        attributes.append(box_list)
 
-xml_path = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/VOC2007/Annotations/'
+    return attributes
+
+xml_path = '/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_ZF/VOC2007/Annotations/'
 xmls = os.listdir(xml_path)
 
-image_size = open('/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/allboxes.txt', 'w')
+image_none = open('/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_ZF/VOC2007/allnoneboxes.txt', 'w')
+image_cx = open('/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_ZF/VOC2007/allcxboxes.txt', 'w')
+
 for xml in xmls:
     xmlpro = read_xml(xml_path + xml)
-    for pro in xmlpro[3]:
-        image_size.write(str(xmlpro[0])[:-4] + ' ' + ' '.join(str(p) for p in pro[:-1]) + '\n')
+    for box in xmlpro[3:]:
 
-image_size.close()
+        if str(box[0]) == 'type_none':
+            image_none.write(str(xmlpro[0])[:] + ' ' + ' '.join(pro for pro in box[1:]) + '\n')
+        elif str(box[0]) == 'type_chaxiao':
+            image_cx.write(str(xmlpro[0])[:] + ' ' + ' '.join(pro for pro in box[1:]) + '\n')
+
+image_none.close()
+image_cx.close()

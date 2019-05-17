@@ -7,9 +7,9 @@
 import os
 import cv2
 
-srcimgpath = '/home/xuwh/Documents/xiaodingoriginal/VOCFiles/AllImages/'
-txtpath = '/home/xuwh/Documents/xiaodingoriginal/imged/split_bujian/txtfile/original_bujian'
-save_dir = '/home/xuwh/Documents/xiaodingoriginal/imged/split_bujian/bujian/'
+srcimgpath = '/home/xuwh/Documents/xiaodingoriginal/project/original/'
+txtpath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/bujian/results/nms_xiaoding.txt'
+save_dir = '/home/xuwh/Documents/xiaodingoriginal/project/split_bj/'
 
 srcimgs = os.listdir(srcimgpath)
 

@@ -2,7 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 
 
-xml_path = '/home/xuwh/Documents/xiaodingoriginal/imged/kkx_Annotation/'
+xml_path = '/home/xuwh/Detect-model/py-faster-rcnn/data/XD_ZF/two_types/VOC2007/Annotations/'
 
 xmlfiles = os.listdir(xml_path)
 

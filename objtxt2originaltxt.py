@@ -5,8 +5,8 @@
 
 
 
-txt_path = '/home/xuwh/Detect-model/py-faster-rcnn/data/xiaoding-data/MergeXD/VOCdevkit2007_2nd/results/VOC2007/Main/test_chaxiao'
-save_path = '/home/xuwh/Detect-model/py-faster-rcnn/data/xiaoding-data/MergeXD/VOCdevkit2007_2nd/results/VOC2007/Main/original_chaxiao'
+txt_path = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/results/zengqiang/test_type_none'
+save_path = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/results/zengqiang/origin_type_none'
 
 txtfile = open(txt_path, 'r')
 boxes = txtfile.readlines()

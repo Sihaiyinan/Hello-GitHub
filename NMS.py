@@ -25,9 +25,9 @@ def parse_rec(filename):
     return objects
 
 
-detfilepath = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/results/original_xiaoding'
-xmlfilespath = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/VOC2007/Annotations/'
-savenmsobj = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/results/nms_obj.txt'
+detfilepath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/bujian/results/origin_xiaoding'
+xmlfilespath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/bujian/VOC2007/Annotations/'
+savenmsobj = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/bujian/results/nms_obj.txt'
 
 with open(detfilepath, 'r') as detf:
     boxes = detf.readlines()
@@ -75,7 +75,7 @@ for i in range(1, num_xml + 1):
 
 with open(savenmsobj, 'w') as nmsf:
     for keep in keepobj:
-        temp = ' '.join(ke for ke in keep)
+        temp = ','.join(ke for ke in keep)
         nmsf.write(temp + '\n')
 
 

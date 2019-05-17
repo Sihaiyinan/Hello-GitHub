@@ -96,7 +96,7 @@ if __name__ == '__main__':
     save_dir = '/home/xuwh/Documents/xiaodingoriginal/project/splite_img/'
     height = 800
     width = 1000
-    overlap = 0.2
+    overlap = 0.1
 
     divideimage(imgs_dir, save_dir, height, width, overlap)
 

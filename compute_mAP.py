@@ -4,8 +4,9 @@ import numpy as np
 
 from voc_eval import voc_eval
 
-rootpath = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/'
+# rootpath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/'
 
+rootpath = '/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_VGG_ZQ/'
 detpath = rootpath + 'results/'
 detfiles = os.listdir(detpath)
 
@@ -16,7 +17,7 @@ detfiles = os.listdir(detpath)
 # classes = ('__background__', # always index 0
 #                 'xiaoding')
 classes = ('__background__', # always index 0
-                  'xiaoding')
+                  'type_none', 'type_chaxiao')
 
 
 aps = []

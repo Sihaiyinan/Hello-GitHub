@@ -137,7 +137,7 @@ def voc_eval(detpath,
     with open(detfile, 'r') as f:
         lines = f.readlines()
 
-    splitlines = [x.strip().split(',') for x in lines]
+    splitlines = [x.strip().split(' ') for x in lines]  ##-------------------------
     image_ids = [x[0] for x in splitlines]
     confidence = np.array([float(x[1]) for x in splitlines])
     BB = np.array([[float(z) for z in x[2:]] for x in splitlines])
@@ -147,6 +147,7 @@ def voc_eval(detpath,
     sorted_scores = np.sort(-confidence)
     BB = BB[sorted_ind, :]
     image_ids = [image_ids[x] for x in sorted_ind]
+
 
     # go down dets and mark TPs and FPs
     nd = len(image_ids)
@@ -179,14 +180,14 @@ def voc_eval(detpath,
             ovmax = np.max(overlaps)
             jmax = np.argmax(overlaps)
 
-        if ovmax > 0.0:
+        if ovmax > 0.5:
             if not R['difficult'][jmax]:
                 if not R['det'][jmax]:
                     tp[d] = 1.
                     R['det'][jmax] = 1
                     # print image_ids[d], ' '.join(str(int(ii)) for ii in bb)
                 else:
-                    fp[d] = 0.
+                    fp[d] = 1.
                     # print image_ids[d], ' '.join(str(int(ii)) for ii in bb)
         else:
             fp[d] = 1.
