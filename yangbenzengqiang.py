@@ -83,9 +83,9 @@ def gaosizaosheng(img):
 if __name__ == '__main__':
 
 
-    nonetxtpath = '/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_ZF/VOC2007/none.txt'
-    imagepath = '/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_ZF/VOC2007/JPEGImages/'
-    savepath = '/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_ZF/VOC2007/zengqiang/'
+    nonetxtpath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/zq_project/VOC2007/noneimg'
+    imagepath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/zq_project/VOC2007/JPEGImages/'
+    savepath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/zq_project/VOC2007/ZQImages/'
 
     nonetxt = open(nonetxtpath, 'r')
     none_name = nonetxt.readlines()
@@ -117,7 +117,7 @@ if __name__ == '__main__':
         cv2.imwrite(savepath + name + '_zs.jpg', image5)
 
         count += 1
-    print count
+        print count
 
 
 

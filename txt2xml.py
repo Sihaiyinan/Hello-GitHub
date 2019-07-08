@@ -117,16 +117,16 @@ def load_annoataion(p):
         return np.array(text_polys, dtype=np.int32), np.array(text_tags, dtype=np.str)
 
 if __name__ == "__main__":
-    txt_path = '/home/xuwh/Documents/xiaodingoriginal/project/bj2cx_ann/cx_on_bj_txt/'
-    xml_path = '/home/xuwh/Documents/xiaodingoriginal/project/bj2cx_ann/cx_on_bjxmlfiles/'
-    img_path = '/home/xuwh/Documents/xiaodingoriginal/project/split_bj/'
+    txt_path = '/home/xuwh/forthEPaper/Test/twotest/chaxiao/VOC2007/xmltxt/'
+    xml_path = '/home/xuwh/forthEPaper/Test/twotest/chaxiao/VOC2007/Annotations/'
+    img_path = '/home/xuwh/forthEPaper/Test/twotest/chaxiao/VOC2007/JPEGImages/'
     print(os.path.exists(txt_path))
     txts = os.listdir(txt_path)
     for count, t in enumerate(txts):
         boxes, labels = load_annoataion(os.path.join(txt_path, t))
         xml_name = t.replace('.txt', '.xml')
         img_name = t.replace('.txt', '.jpg')
-        img = cv2.imread(os.path.join(img_path, img_name + '.jpg'))
+        img = cv2.imread(os.path.join(img_path, img_name) + '.jpg')
         if img is not None:
             h, w, d = img.shape
             WriterXMLFiles(xml_name, xml_path, boxes, labels, w, h, d)

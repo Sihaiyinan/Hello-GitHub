@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-# 统计图像的尺寸
+# 统计部件的尺寸
 
 import os
 import xml.etree.cElementTree as ET
@@ -32,20 +32,16 @@ def read_xml(xmlpath):
 
     return attributes
 
-xml_path = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/zq_project/VOC2007/Annotations/'
-xmls = os.listdir(xml_path)
+xmlpath = '/home/xuwh/forthEPaper/origiNimg/VOCfiles/Annotations_bj/'
+bj_txt = open('/home/xuwh/forthEPaper/origiNimg/VOCfiles/bujian.txt', 'w')
 
-image_none = open('/home/xuwh/forthEPaper/TrainVaild/chaxiao/zq_project/VOC2007/allnoneboxes.txt', 'w')
-image_cx = open('/home/xuwh/forthEPaper/TrainVaild/chaxiao/zq_project/VOC2007/allcxboxes.txt', 'w')
+xmlfiles = os.listdir(xmlpath)
+for xml in xmlfiles:
+    pro = read_xml(xmlpath + xml)
+    for pr in pro[3:]:
+        for p in pr:
+            bj_txt.write(p + ' ')
+        bj_txt.write('\n')
+bj_txt.close()
 
-for xml in xmls:
-    xmlpro = read_xml(xml_path + xml)
-    for box in xmlpro[3:]:
 
-        if str(box[0]) == 'type_none':
-            image_none.write(str(xmlpro[0])[:] + ' ' + ' '.join(pro for pro in box[1:]) + '\n')
-        elif str(box[0]) == 'type_chaxiao':
-            image_cx.write(str(xmlpro[0])[:] + ' ' + ' '.join(pro for pro in box[1:]) + '\n')
-
-image_none.close()
-image_cx.close()

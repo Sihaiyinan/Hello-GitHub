@@ -4,20 +4,20 @@ import numpy as np
 
 from voc_eval import voc_eval
 
-# rootpath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/'
+rootpath = '/home/xuwh/forthEPaper/Test/twotest/bujian/'
 
-rootpath = '/home/xuwh/Detect-model/py-faster-rcnn/data/BJ_XD_VGG_ZQ/'
-detpath = rootpath + 'results/'
+# rootpath = '/home/xuwh/forthEPaper/TrainVaild/bujian/sx_project/'
+detpath = rootpath + 'results/30000/'
 detfiles = os.listdir(detpath)
 
 # classes = ('__background__',  # always index 0
 #                  'simple', 'triangle', 'wings', 'cross', 'girder', 'others')
 # classes = ('__background__', # always index 0
 #                  'type_none', 'type_chaxiao', 'type_head')
-# classes = ('__background__', # always index 0
-#                 'xiaoding')
 classes = ('__background__', # always index 0
-                  'type_none', 'type_chaxiao')
+                'xiaoding')
+# classes = ('__background__', # always index 0
+#                   'type_none', 'type_chaxiao')
 
 
 aps = []

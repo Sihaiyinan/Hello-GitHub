@@ -2,8 +2,8 @@
 # 去掉txt文件中没有内容的
 import os
 
-txtpath = '/home/xuwh/Documents/xiaodingoriginal/project/bj2cx_ann/origin_cx_on_bj_txt/'
-dstpath = '/home/xuwh/Documents/xiaodingoriginal/project/bj2cx_ann/cx_on_bj_txt/'
+txtpath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/splittxt/all_txt/'
+dstpath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/splittxt/sx_txt/'
 
 txtfile = os.listdir(txtpath)
 count = 0

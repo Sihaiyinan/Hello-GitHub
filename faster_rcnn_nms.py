@@ -35,9 +35,9 @@ def py_cpu_nms(dets, thresh):
     return keep
 
 
-detfilepath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/results/zengqiang/origin_type_none'
-xmlfilespath = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/VOC2007/Annotations/'
-savenmsobj = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/results/zengqiang/nms_type_none'
+detfilepath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/source/project/results/twosteps/origin_type_chaxiao'
+xmlfilespath = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/source/project/VOC2007/Annotations/'
+savenmsobj = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/source/project/results/twosteps/nms_origin_type_chaxiao'
 
 with open(detfilepath, 'r') as detf:
     boxes = detf.readlines()
@@ -51,7 +51,7 @@ keepobj = np.array([])
 for i in range(1, num_xml + 1):
     imgboxes = []
     for box in boxes:
-        box = box.strip().split(',')
+        box = box.strip().split(' ')
         if box[0] == str(i):
             imgboxes.append(box)
 
@@ -71,7 +71,7 @@ print len(keepobj)
 
 with open(savenmsobj, 'w') as nmsf:
     for keep in keepobj:
-        temp = ','.join(k for k in keep)
+        temp = ' '.join(k for k in keep)
         nmsf.write(temp + '\n')
 
 

@@ -32,8 +32,8 @@ import os
 
 
 def divideimage(imgs_dir, save_dir, height, width, overlap):
-    rep_w = width * overlap   # 宽度重复尺寸
-    rep_h = height * overlap  # 高度重复尺寸
+    rep_w = width * 0.3   # 宽度重复尺寸
+    rep_h = height * 0.4  # 高度重复尺寸
 
     image_names = os.listdir(imgs_dir)
     num = len(image_names)
@@ -92,8 +92,8 @@ if __name__ == '__main__':
     # print('Called with args:')
     # print(args)
 
-    imgs_dir = '/home/xuwh/Documents/xiaodingoriginal/project/original/'
-    save_dir = '/home/xuwh/Documents/xiaodingoriginal/project/splite_img/'
+    imgs_dir = '/home/xuwh/forthEPaper/Test/source/Images/'
+    save_dir = '/home/xuwh/forthEPaper/Test/source/splitimgs/'
     height = 800
     width = 1000
     overlap = 0.1

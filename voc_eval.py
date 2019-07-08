@@ -180,12 +180,14 @@ def voc_eval(detpath,
             ovmax = np.max(overlaps)
             jmax = np.argmax(overlaps)
 
+
         if ovmax > 0.5:
             if not R['difficult'][jmax]:
                 if not R['det'][jmax]:
                     tp[d] = 1.
                     R['det'][jmax] = 1
                     # print image_ids[d], ' '.join(str(int(ii)) for ii in bb)
+                    # print image_ids[d], ' '.join(str(int(ii)) for ii in BBGT[jmax])
                 else:
                     fp[d] = 1.
                     # print image_ids[d], ' '.join(str(int(ii)) for ii in bb)
@@ -197,6 +199,10 @@ def voc_eval(detpath,
     fp = np.cumsum(fp)
     tp = np.cumsum(tp)
     rec = tp / float(npos)
+
+    print('gt = %i' % npos)
+    print('fp = %i' % np.max(fp))
+    print('tp = %i' % np.max(tp))
     # avoid divide by zero in case the first detection matches a difficult
     # ground truth
     prec = tp / np.maximum(tp + fp, np.finfo(np.float64).eps)

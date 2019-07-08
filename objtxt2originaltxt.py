@@ -5,8 +5,8 @@
 
 
 
-txt_path = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/results/zengqiang/test_type_none'
-save_path = '/home/xuwh/Documents/xiaodingoriginal/project/compute_mAP/chaxiao/results/zengqiang/origin_type_none'
+txt_path = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/source/project/results/direct/test_type_chaxiao'
+save_path = '/home/xuwh/forthEPaper/TrainVaild/chaxiao/source/project/results/direct/origin_type_chaxiao'
 
 txtfile = open(txt_path, 'r')
 boxes = txtfile.readlines()
@@ -34,8 +34,8 @@ for box in boxes:
         bbox[1] = 0
 
     #bbox = list(map(str, bbox))
-    savetxt.write(imgname + ',' + box[1] + ',' + '%.2f' % bbox[0] + ',' +'%.2f' % bbox[1] + ','
-                  + '%.2f' % bbox[2] + ',' + '%.2f' % bbox[3] + '\n')
+    savetxt.write(imgname + ' ' + box[1] + ' ' + '%.2f' % bbox[0] + ' ' +'%.2f' % bbox[1] + ' '
+                  + '%.2f' % bbox[2] + ' ' + '%.2f' % bbox[3] + '\n')
     count += 1
     print('{}/{}'.format(count, len(boxes)))
 

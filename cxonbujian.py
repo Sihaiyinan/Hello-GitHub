@@ -26,9 +26,9 @@ def parse_rec(filename):
 
     return objects
 
-bjpath = '/home/xuwh/Documents/xiaodingoriginal/project/bj2cx_ann/bujian.txt'
-cxannpath = '/home/xuwh/Documents/xiaodingoriginal/VOCFiles/Annotations_cx/'
-savepath = '/home/xuwh/Documents/xiaodingoriginal/project/bj2cx_ann/origin_cx_on_bj_txt/'
+bjpath = '/home/xuwh/forthEPaper/Test/twotest/chaxiao/VOC2007/bujian'   #检测到的部件的txt文件
+cxannpath = '/home/xuwh/forthEPaper/Test/source/Annotations_cx/'        #插销真值的xml文件
+savepath = '/home/xuwh/forthEPaper/Test/twotest/chaxiao/VOC2007/xmltxt/'        # 输出保存变换后的txt文件
 
 cxannfiles = os.listdir(cxannpath)
 
@@ -37,7 +37,7 @@ bjlines = bjfile.readlines()
 
 count = 0
 for bj in bjlines:
-    bj = bj.strip().split(',')
+    bj = bj.strip().split(' ')
     bj_name = bj[0]
     bj_boxes = np.array(bj[2:]).astype(float)
     bj_txt_name = bj_name + '_' + str(int(bj_boxes[0])) + '_' + str(int(bj_boxes[1]))
@@ -67,14 +67,16 @@ for bj in bjlines:
             inters = iw * ih
 
             ratio = inters / ((BBGT[3] - BBGT[1]) * (BBGT[2] - BBGT[0]))
-            if ratio > 0.5:
+            if ratio > 0.4:      # 此处设置有问题， 如果相交部分的面积预不见得总面积之比过小的话，会导致没有部件的目标框会被当成真值。
                 sxmin = int(ixmin - bj_boxes[0])
                 symin = int(iymin - bj_boxes[1])
+                sxmax = int(ixmax - bj_boxes[0])
+                symax = int(iymax - bj_boxes[1])
                 if sxmin == 0:
                     sxmin += 1
                 if symin == 0:
                     symin += 1
-                string = [bj_txt_name, sxmin , symin, int(ixmax - bj_boxes[0]), int(iymax - bj_boxes[1])]
+                string = [bj_txt_name, sxmin , symin, sxmax, symax]
                 bj_txt.write(' '.join(str(s) for s in string) + ' ' + label + '\n')
     bj_txt.close()
     count += 1

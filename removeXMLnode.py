@@ -5,13 +5,13 @@ import os
 import xml.dom.minidom
 
 
-ann_path = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/VOC2007/Annotations/'
-ann_newpath = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/VOC2007/newAnnotations/'
+ann_path = '/home/xuwh/forthEPaper/TrainVaild/bujian/project/VOC2007/Annotations/'
+ann_newpath = '/home/xuwh/forthEPaper/TrainVaild/bujian/project/VOC2007/Annotations/'
 ann_list = os.listdir(ann_path)
 
 print len(ann_list)
 
-undetectpath = '/home/xuwh/Documents/xiaodingoriginal/imged/compute_mAP/bujian/undetected'
+undetectpath = '/home/xuwh/forthEPaper/TrainVaild/bujian/project/VOC2007/name'
 txtfile = open(undetectpath, 'r')
 unboxes = txtfile.readlines()
 
