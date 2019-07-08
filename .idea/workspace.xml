@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9404644-e401-4c6f-9e19-34f8932ff32a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bujian_size.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pushgittetsy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/合并.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.py" beforeDir="false" afterPath="$PROJECT_DIR$/11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrueBoxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/TrueBoxes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compute_mAP.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_mAP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cxonbujian.py" beforeDir="false" afterPath="$PROJECT_DIR$/cxonbujian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawimg.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawimg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faster_rcnn_nms.py" beforeDir="false" afterPath="$PROJECT_DIR$/faster_rcnn_nms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objtxt2originaltxt.py" beforeDir="false" afterPath="$PROJECT_DIR$/objtxt2originaltxt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/removeXMLnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/removeXMLnode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaixuan_cx_on_bj.py" beforeDir="false" afterPath="$PROJECT_DIR$/shaixuan_cx_on_bj.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splitImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/splitImage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/splitbujian.py" beforeDir="false" afterPath="$PROJECT_DIR$/splitbujian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt2xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/txt2xml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voc_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/voc_eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yangbenzengqiang.py" beforeDir="false" afterPath="$PROJECT_DIR$/yangbenzengqiang.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pushgittetsy.py" beforeDir="false" afterPath="$PROJECT_DIR$/pushgittetsy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +32,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pushgittetsy.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -306,6 +293,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18504366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -643,7 +631,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pushgittetsy.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
